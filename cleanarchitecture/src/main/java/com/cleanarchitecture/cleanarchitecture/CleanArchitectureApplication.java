@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 //disable temp database configuration
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@ComponentScan()
+@ComponentScan(basePackages = {"com.cleanarchitecture.cleanarchitecture"})
 public class CleanArchitectureApplication {
 
     public static void main(String[] args) {

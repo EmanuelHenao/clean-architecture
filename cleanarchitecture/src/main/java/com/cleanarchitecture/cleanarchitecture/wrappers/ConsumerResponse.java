@@ -28,14 +28,17 @@ public class ConsumerResponse<T> implements IConsumerResponse {
 
     protected final T data;
     protected final HttpHeaders httpHeaders;
-    protected HttpStatus httpStatus;
+    protected final HttpStatus httpStatus;
 
     public ResponseEntity<ConsumerResponse<T>> entity() {
-        return ResponseEntity.status(HttpStatus.OK).body(this);
+        return ResponseEntity
+                .status(httpStatus).headers(httpHeaders)
+                .body(this);
     }
 
     public Optional<T> get() {
         return Optional.ofNullable(this.data);
     }
+
 
 }
