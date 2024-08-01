@@ -1,6 +1,6 @@
 package com.cleanarchitecture.cleanarchitecture.wrappers;
 
-public interface IOperation < I extends IConsumerRequest, O extends IConsumerResponse>{
+public interface IOperation<I extends IConsumerRequest, O extends IConsumerResponse> {
 
-    O handle (I consumerRequest);
+    O handle(I consumerRequest);
 }
