@@ -5,6 +5,7 @@ import com.cleanarchitecture.cleanarchitecture.wrappers.ConsumerRequest;
 import com.cleanarchitecture.cleanarchitecture.wrappers.ConsumerResponse;
 import com.cleanarchitecture.cleanarchitecture.wrappers.IOperation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,8 +19,10 @@ public class GetHelloOperation implements IOperation<ConsumerRequest<Void>, Cons
                 .message("Hello Word")
                 .build();
 
+
         return ConsumerResponse.<HelloRs>builder()
                 .data(response)
+                .httpStatus(HttpStatus.OK)
                 .build();
     }
 }

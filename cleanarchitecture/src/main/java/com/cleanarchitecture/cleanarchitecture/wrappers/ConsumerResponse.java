@@ -1,6 +1,7 @@
 package com.cleanarchitecture.cleanarchitecture.wrappers;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 import lombok.Generated;
 import lombok.Getter;
@@ -20,6 +21,7 @@ import java.util.Optional;
 @Setter
 @Generated
 @ToString
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConsumerResponse<T> implements IConsumerResponse {
 
 
@@ -39,6 +41,5 @@ public class ConsumerResponse<T> implements IConsumerResponse {
     public Optional<T> get() {
         return Optional.ofNullable(this.data);
     }
-
 
 }

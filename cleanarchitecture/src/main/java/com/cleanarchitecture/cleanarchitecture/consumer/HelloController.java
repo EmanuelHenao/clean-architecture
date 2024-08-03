@@ -4,6 +4,7 @@ import com.cleanarchitecture.cleanarchitecture.model.HelloRs;
 import com.cleanarchitecture.cleanarchitecture.wrappers.ConsumerRequest;
 import com.cleanarchitecture.cleanarchitecture.wrappers.ConsumerResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class HelloController implements IHelloControllerInterface {
 
+    @Autowired
     private HelloRequestDelegate requestDelegate;
 
     @Override
